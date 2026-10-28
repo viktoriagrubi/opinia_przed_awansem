@@ -176,20 +176,33 @@ input[type="number"]:focus {
 .referrals {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 18px 14px;
   margin-top: 18px;
 }
 
-.referral-field {
+.referral-entry {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
+  min-width: 0;
 }
 
-.referral-field span {
+.referral-number {
   color: #93c5fd;
   font-weight: 700;
   min-width: 24px;
+  padding-top: 15px;
+}
+
+.referral-inputs {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  width: 100%;
+}
+
+.referral-inputs input {
+  min-width: 0;
 }
 
 .btn {
@@ -255,6 +268,10 @@ input[type="number"]:focus {
 
   .subtitle {
     margin-bottom: 32px;
+  }
+
+  .referrals {
+    grid-template-columns: 1fr;
   }
 
   .section h2 {

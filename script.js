@@ -15,7 +15,7 @@ const fieldNames = [
   "reliable",
   "appropriatelyDressed",
   "recommend",
-  ...Array.from({ length: 10 }, (_, i) => `referral${i + 1}`),
+  ...Array.from({ length: 10 }, (_, i) => [`referral${i + 1}Name`, `referral${i + 1}Phone`]).flat(),
 ];
 
 function saveFormState() {
@@ -72,8 +72,11 @@ form.addEventListener("submit", async (event) => {
 
   const referrals = Array.from({ length: 10 }, (_, i) => {
     const number = i + 1;
-    return `${number}. ${form.elements[`referral${number}`].value.trim()}`;
-  }).filter((entry) => !entry.endsWith(". "));
+    const name = form.elements[`referral${number}Name`].value.trim();
+    const phone = form.elements[`referral${number}Phone`].value.trim();
+    if (!name && !phone) return "";
+    return `${number}. ${name || "Nie podano nazwy"} | Telefon: ${phone || "Nie podano"}`;
+  }).filter(Boolean);
 
   const templateParams = {
     employee: form.elements.employee.value.trim(),
@@ -90,16 +93,15 @@ form.addEventListener("submit", async (event) => {
       form.querySelector('[name="appropriatelyDressed"]:checked')?.value || "",
     recommend: form.querySelector('[name="recommend"]:checked')?.value || "",
     referrals: referrals.length ? referrals.join("\n") : "Nie podano",
-    referral1: form.elements.referral1.value.trim(),
-    referral2: form.elements.referral2.value.trim(),
-    referral3: form.elements.referral3.value.trim(),
-    referral4: form.elements.referral4.value.trim(),
-    referral5: form.elements.referral5.value.trim(),
-    referral6: form.elements.referral6.value.trim(),
-    referral7: form.elements.referral7.value.trim(),
-    referral8: form.elements.referral8.value.trim(),
-    referral9: form.elements.referral9.value.trim(),
-    referral10: form.elements.referral10.value.trim(),
+    ...Object.fromEntries(
+      Array.from({ length: 10 }, (_, i) => {
+        const number = i + 1;
+        return [
+          [`referral${number}Name`, form.elements[`referral${number}Name`].value.trim()],
+          [`referral${number}Phone`, form.elements[`referral${number}Phone`].value.trim()],
+        ];
+      }).flat()
+    ),
   };
 
   statusDiv.className = "status";
