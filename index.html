@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opinia przed awansem</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+
+  <body>
+    <main class="card">
+      <div class="logo">KARIERA</div>
+      <h1>Opinia przed awansem</h1>
+      <p class="subtitle">
+        W celu uzyskania przez naszego przedstawiciela awansu na kolejny poziom
+        w karierze zawodowej w firmie OVB prosimy o odpowiedź na poniższe pytania.
+      </p>
+
+      <form id="recruitmentForm">
+        <div class="section">
+          <h2>Dane przedstawiciela i klienta</h2>
+          <label class="field-label" for="employee">Pracownik <span class="required">*</span></label>
+          <input type="text" id="employee" name="employee" required placeholder="Imię i nazwisko pracownika" />
+
+          <label class="field-label" for="client">Klient <span class="required">*</span></label>
+          <input type="text" id="client" name="client" required placeholder="Imię i nazwisko klienta" />
+        </div>
+
+        <div class="section">
+          <h2>1. Czy odbył Pan/Pani spotkanie z przedstawicielem firmy OVB? <span class="required">*</span></h2>
+          <div class="grid binary-grid">
+            <label class="option"><input type="radio" name="meetingHeld" value="TAK" required /> Tak</label>
+            <label class="option"><input type="radio" name="meetingHeld" value="NIE" /> Nie</label>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>2. Czy nasz przedstawiciel przedstawił cel swojej wizyty w sposób jasny i zrozumiały? <span class="required">*</span></h2>
+          <div class="grid binary-grid">
+            <label class="option"><input type="radio" name="purposeClear" value="TAK" required /> Tak</label>
+            <label class="option"><input type="radio" name="purposeClear" value="NIE" /> Nie</label>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>3. Czy podane na spotkaniu informacje zostały przedstawione w odpowiedni dla Państwa sposób? <span class="required">*</span></h2>
+          <div class="grid binary-grid">
+            <label class="option"><input type="radio" name="informationAppropriate" value="TAK" required /> Tak</label>
+            <label class="option"><input type="radio" name="informationAppropriate" value="NIE" /> Nie</label>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>4. Czy przedstawiciel naszej firmy był: <span class="required">*</span></h2>
+          <div class="subquestion">
+            <p>Kompetentny?</p>
+            <div class="grid binary-grid">
+              <label class="option"><input type="radio" name="competent" value="TAK" required /> Tak</label>
+              <label class="option"><input type="radio" name="competent" value="NIE" /> Nie</label>
+            </div>
+          </div>
+          <div class="subquestion">
+            <p>Wykazał się znajomością tematu?</p>
+            <div class="grid binary-grid">
+              <label class="option"><input type="radio" name="subjectKnowledge" value="TAK" required /> Tak</label>
+              <label class="option"><input type="radio" name="subjectKnowledge" value="NIE" /> Nie</label>
+            </div>
+          </div>
+          <div class="subquestion">
+            <p>Rzetelny i słowny?</p>
+            <div class="grid binary-grid">
+              <label class="option"><input type="radio" name="reliable" value="TAK" required /> Tak</label>
+              <label class="option"><input type="radio" name="reliable" value="NIE" /> Nie</label>
+            </div>
+          </div>
+          <div class="subquestion">
+            <p>Odpowiednio ubrany?</p>
+            <div class="grid binary-grid">
+              <label class="option"><input type="radio" name="appropriatelyDressed" value="TAK" required /> Tak</label>
+              <label class="option"><input type="radio" name="appropriatelyDressed" value="NIE" /> Nie</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>5. Czy Państwa zdaniem usługi naszego przedstawiciela są godne polecenia – rekomendowania? <span class="required">*</span></h2>
+          <div class="grid binary-grid">
+            <label class="option"><input type="radio" name="recommend" value="TAK" required /> Tak</label>
+            <label class="option"><input type="radio" name="recommend" value="NIE" /> Nie</label>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>6. Komu lub jakim grupom zawodowym polecił(a)by Pan/Pani usługi naszego pracownika?</h2>
+          <p class="helper">Można wpisać do 10 osób lub grup zawodowych.</p>
+          <div class="referrals">
+            <label class="referral-field"><span>1.</span><input type="text" name="referral1" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>2.</span><input type="text" name="referral2" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>3.</span><input type="text" name="referral3" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>4.</span><input type="text" name="referral4" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>5.</span><input type="text" name="referral5" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>6.</span><input type="text" name="referral6" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>7.</span><input type="text" name="referral7" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>8.</span><input type="text" name="referral8" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>9.</span><input type="text" name="referral9" placeholder="Osoba lub grupa zawodowa" /></label>
+            <label class="referral-field"><span>10.</span><input type="text" name="referral10" placeholder="Osoba lub grupa zawodowa" /></label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Wyślij opinię</button>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <div class="footer">© Kariera – Formularz opinii przed awansem</div>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

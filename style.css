@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top left, #1e3a8a 0%, transparent 30%),
+    radial-gradient(circle at bottom right, #0f172a 0%, transparent 35%),
+    linear-gradient(135deg, #020617, #0f172a, #111827);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  color: white;
+}
+
+.card {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 34px;
+  padding: 55px;
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 14px;
+  text-align: center;
+  font-weight: 600;
+}
+
+h1 {
+  text-align: center;
+  font-size: 44px;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #cbd5e1;
+  margin-bottom: 45px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-size: 21px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.required {
+  color: #38bdf8;
+}
+
+.helper {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.field-label {
+  display: block;
+  margin: 18px 0 9px;
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.binary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 480px;
+}
+
+.option {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 17px 18px;
+  border-radius: 18px;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+}
+
+.option:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  flex: 0 0 auto;
+  transform: scale(1.15);
+  accent-color: #38bdf8;
+}
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+  width: 100%;
+  padding: 17px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {
+  border-color: #38bdf8;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.subquestion {
+  padding: 20px;
+  margin-top: 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.subquestion p {
+  margin-bottom: 13px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.referrals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.referral-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.referral-field span {
+  color: #93c5fd;
+  font-weight: 700;
+  min-width: 24px;
+}
+
+.btn {
+  width: 100%;
+  padding: 22px;
+  border: none;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+.status {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.success {
+  color: #4ade80;
+}
+
+.error {
+  color: #f87171;
+}
+
+.footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .card {
+    padding: 28px 20px;
+    border-radius: 26px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    margin-bottom: 32px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
+
+  .grid,
+  .referrals {
+    grid-template-columns: 1fr;
+  }
+
+  .binary-grid {
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .subquestion {
+    padding: 15px;
+  }
+}
